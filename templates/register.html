@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}Register | Dalton ECI Alumni{% endblock %}
+{% block content %}
+<section class="page-hero"><div class="container"><p class="eyebrow">ALUMNI REGISTRATION</p><h1>Join the Dalton ECI Alumni Network</h1><p>Your information will be stored privately and will only be accessible to authorized administrators.</p></div></section>
+<section class="section"><div class="container form-shell"><div class="fee-banner"><strong>Alumni Membership Fee: JMD $2,000</strong><br><span>Registration is submitted for review. Membership becomes active after payment is verified by Dalton ECI administration.</span></div><form method="post" class="form-card"><input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+  <h2>Personal Information</h2>
+  <div class="form-grid">
+    <label>First Name*<input name="first_name" required></label>
+    <label>Last Name*<input name="last_name" required></label>
+    <label>Preferred/Nickname<input name="preferred_name"></label>
+    <label>Email Address*<input type="email" name="email" required></label>
+    <label>Phone Number<input name="phone"></label>
+    <label>Current Town/Parish/Country<input name="current_location"></label>
+    <label>Year Started at Dalton ECI<input name="year_started" placeholder="e.g. 2001"></label>
+    <label>Year Left/Graduated<input name="year_left" placeholder="e.g. 2003"></label>
+    <label class="full">Current Occupation / Area of Work<input name="occupation"></label>
+    <label class="full">A Favourite Dalton ECI Memory<textarea name="memories" rows="4"></textarea></label>
+    <label>Would you like to support Dalton ECI?<select name="willing_to_support"><option value="">Select</option><option>Yes</option><option>Maybe</option><option>Not at this time</option></select></label>
+    <label>Area of Support<select name="support_area"><option value="">Select</option><option>Mentoring</option><option>Volunteering</option><option>Sponsorship</option><option>Donations</option><option>Career talks</option><option>School projects</option><option>Other</option></select></label>
+  </div>
+  <label class="consent"><input type="checkbox" name="consent" required> I consent to Dalton ECI securely storing this information for alumni communication, engagement, and school development purposes.</label>
+  <div class="payment-note"><h3>Membership Payment</h3><p><strong>Fee: JMD $2,000</strong></p><p>After submitting this form, Dalton ECI administration will provide/confirm the approved payment instructions and verify your payment. Please do not send money to an unverified account.</p><label>Payment/Transaction Reference (optional)<input name="payment_reference" placeholder="Enter reference if you already received approved payment instructions"></label></div><button class="btn primary" type="submit">Submit Registration for Review</button>
+</form></div></section>
+{% endblock %}

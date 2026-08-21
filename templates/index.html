@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block title %}Dalton ECI Alumni | Home{% endblock %}
+{% block content %}
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <p class="eyebrow">DALTON EARLY CHILDHOOD INSTITUTION</p>
+      <h1>Once a Dalton child,<br>always part of the family.</h1>
+      <p class="lead">Welcome to the official Dalton ECI Alumni Network—a place to reconnect, celebrate our shared beginnings, support the next generation, and keep our school community growing.</p>
+      <div class="actions"><a class="btn primary" href="{{ url_for('register') }}">Join the Alumni Network</a><a class="btn secondary" href="#mission">Learn More</a></div>
+    </div>
+    <div class="hero-card">
+      <div class="school-badge">Since 1993</div>
+      <h3>Our alumni community</h3>
+      <p>Former students can register their details securely. Contact information and private responses are visible only to authorized school administrators.</p>
+      <div class="privacy-chip">🔒 Private by design</div>
+    </div>
+  </div>
+</section>
+<section id="mission" class="section">
+  <div class="container">
+    <div class="section-heading"><p class="eyebrow">OUR PURPOSE</p><h2>Building a lifelong Dalton connection</h2></div>
+    <div class="cards">
+      <article><div class="icon">🤝</div><h3>Reconnect</h3><p>Help former students reconnect with the school and with one another across generations.</p></article>
+      <article><div class="icon">🎓</div><h3>Celebrate</h3><p>Recognize alumni achievements, milestones, memories, and the impact of an early Dalton education.</p></article>
+      <article><div class="icon">🌱</div><h3>Give Back</h3><p>Create opportunities for alumni to mentor, volunteer, sponsor, donate, or support school development.</p></article>
+    </div>
+  </div>
+</section>
+<section class="section alt">
+  <div class="container split">
+    <div><p class="eyebrow">PRIVACY & SECURITY</p><h2>Your information is not public.</h2><p>Registration details are stored in the website database. The public site does not display phone numbers, email addresses, personal memories, or other private responses.</p></div>
+    <div class="privacy-list"><div>✓ Administrator login required</div><div>✓ Password-protected dashboard</div><div>✓ Private alumni records</div><div>✓ Search and export for authorized administration</div></div>
+  </div>
+</section>
+<section class="cta"><div class="container"><h2>Were you once a student of Dalton ECI?</h2><p>Add your name to the alumni family today. Alumni membership is <strong>JMD $2,000</strong>.</p><a class="btn light" href="{{ url_for('register') }}">Register Now</a></div></section>
+{% endblock %}

@@ -1,0 +1,3 @@
+{% extends 'base.html' %}
+{% block title %}Admin Login | Dalton ECI Alumni{% endblock %}
+{% block content %}<section class="thankyou"><form method="post" class="login-card"><input type="hidden" name="csrf_token" value="{{ csrf_token() }}"><p class="eyebrow">AUTHORIZED ACCESS ONLY</p><h1>Administrator Login</h1><label>Username<input name="username" required autocomplete="username"></label><label>Password<input type="password" name="password" required autocomplete="current-password"></label><button class="btn primary" type="submit">Login</button><p class="small">Private alumni details are restricted to authorized Dalton ECI administration.</p></form></section>{% endblock %}

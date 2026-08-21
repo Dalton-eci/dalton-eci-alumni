@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Dalton ECI Alumni{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a class="brand" href="{{ url_for('index') }}">
+      <div class="brand-mark">DECI</div>
+      <div><strong>Dalton ECI Alumni</strong><span>Connected by our beginning</span></div>
+    </a>
+    <nav>
+      <a href="{{ url_for('index') }}">Home</a>
+      <a href="{{ url_for('register') }}">Register</a>
+      {% if session.get('is_admin') %}
+      <a href="{{ url_for('admin_dashboard') }}">Admin</a>
+      <a href="{{ url_for('admin_logout') }}">Logout</a>
+      {% else %}
+      <a href="{{ url_for('admin_login') }}">Admin Login</a>
+      {% endif %}
+    </nav>
+  </div>
+</header>
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+  <div class="container flash-wrap">
+    {% for category, message in messages %}
+      <div class="flash {{ category }}">{{ message }}</div>
+    {% endfor %}
+  </div>
+  {% endif %}
+{% endwith %}
+
+<main>{% block content %}{% endblock %}</main>
+<footer>
+  <div class="container footer-grid">
+    <div><strong>Dalton Early Childhood Institution Alumni</strong><br>Dalton District, Dalton P.A., St. Elizabeth, Jamaica</div>
+    <div>Alumni information is stored privately and is only available to authorized administrators.</div>
+  </div>
+</footer>
+</body>
+</html>
